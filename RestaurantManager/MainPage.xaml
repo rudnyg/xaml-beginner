@@ -19,6 +19,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Restaurant Manager"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
         <TextBlock Grid.Row="2" Text="Go to Orders View"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Internal Test Version"  VerticalAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Sumbit Order"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
 
