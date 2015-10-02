@@ -26,5 +26,15 @@ namespace RestaurantManager
         {
             this.InitializeComponent();
         }
+
+        private void ClearButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void HomeButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof (MainPage), null);
+        }
     }
 }

@@ -26,5 +26,17 @@ namespace RestaurantManager
         {
             this.InitializeComponent();
         }
+
+   
+
+        private void SumbitOrderButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof (ExpeditePage), null);
+        }
+
+        private void OrderViewButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof (OrderPage), null);
+        }
     }
 }
