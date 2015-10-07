@@ -5,8 +5,11 @@
     xmlns:local="using:RestaurantManager"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="using:RestaurantManager.Models"
     mc:Ignorable="d">
-
+    <Page.DataContext>
+        <model:DataManager/>
+    </Page.DataContext>
     <Grid Background="#FF000000">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -15,7 +18,8 @@
         <CommandBar>
             <AppBarButton Icon="Home" Label="Home"  x:Name="HomeButton" Click="HomeButton_OnClick"/>
         </CommandBar>
-        <GridView Grid.Column="0" Grid.Row="0" Background="#FF7A7272" />
+        <GridView Grid.Column="0" Grid.Row="0" Background="Black" 
+                  ItemsSource="{Binding OrderItems}"/>
         <Button Grid.Row="1" Content="Clear All Orders"   x:Name="ClearButton" Click="ClearButton_OnClick" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
     </Grid>
