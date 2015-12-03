@@ -9,18 +9,18 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height=".3*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.40*"/>
+            <RowDefinition Height="0.10*"/>
+            <RowDefinition Height="0.50*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />       
+            <ColumnDefinition Width="0.50*" />
+            <ColumnDefinition Width="0.50*" />       
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0"  Grid.ColumnSpan="2" Text="Restaurant Manager"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
         <Button Grid.Row="2" x:Name="OrderViewButton" Click="OrderViewButton_OnClick" Grid.Column="0" Content="Go to Orders View"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Row="1"  Grid.Column="0" Text="Internal Test Version"  VerticalAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
-        <Button Grid.Row="2" x:Name="SumbitOrderButton" Click="SumbitOrderButton_OnClick" Grid.Column="1" Content="Sumbit Order"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Grid.Row="2" x:Name="SumbitOrderButton" Click="SumbitOrderButton_OnClick" Grid.Column="1" Content="Submit Order"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
 
     </Grid>
