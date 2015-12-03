@@ -11,7 +11,7 @@ namespace RestaurantManager.Models
     {
         [Key]
         public int  Id { get; set; }
-        public string SpecialRequest { get; set; }
+        public string SpecialRequests { get; set; }
         public List<MenuItem> Items { get; set; }
         public Table Table { get; set; }
         public bool Complete { get; set; }
