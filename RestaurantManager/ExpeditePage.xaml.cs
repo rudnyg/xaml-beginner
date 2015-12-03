@@ -32,9 +32,9 @@ namespace RestaurantManager
             throw new NotImplementedException();
         }
 
-        private void HomeButton_OnClick(object sender, RoutedEventArgs e)
+        private void MainPage_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof (MainPage), null);
+            this.Frame.Navigate(typeof (MainPage));
         }
     }
 }

@@ -8,7 +8,7 @@
     xmlns:models="using:RestaurantManager.Models"
     mc:Ignorable="d">
     <Page.DataContext>
-        <models:DataManager/>
+        <models:OrderDataManager/>
     </Page.DataContext>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>

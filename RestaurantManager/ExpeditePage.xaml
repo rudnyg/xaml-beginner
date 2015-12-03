@@ -5,22 +5,28 @@
     xmlns:local="using:RestaurantManager"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:model="using:RestaurantManager.Models"
+    xmlns:models="using:RestaurantManager.Models"
     mc:Ignorable="d">
     <Page.DataContext>
-        <model:DataManager/>
+        <models:ExpediteDataManager/>
     </Page.DataContext>
-    <Grid Background="#FF000000">
+    <Page.TopAppBar>
+        <AppBar>
+            <AppBarButton Label="Home" Click="MainPage_Click">
+                <AppBarButton.Icon>
+                    <SymbolIcon Symbol="Home"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+        </AppBar>
+    </Page.TopAppBar>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height=".25*" />     
+            <RowDefinition Height="0.05*" />
+            <RowDefinition Height="0.85*" />
+            <RowDefinition Height="0.10*" />
         </Grid.RowDefinitions>
-        <CommandBar>
-            <AppBarButton Icon="Home" Label="Home"  x:Name="HomeButton" Click="HomeButton_OnClick"/>
-        </CommandBar>
-        <GridView Grid.Column="0" Grid.Row="0" Background="Black" 
-                  ItemsSource="{Binding OrderItems}"/>
-        <Button Grid.Row="1" Content="Clear All Orders"   x:Name="ClearButton" Click="ClearButton_OnClick" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <GridView Grid.Row="1"    ItemsSource="{Binding OrderItems}"/>
+        <Button Grid.Row="2" Content="Clear All Orders"   x:Name="ClearButton" Click="ClearButton_OnClick" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
     </Grid>
 </Page>
