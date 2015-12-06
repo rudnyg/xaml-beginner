@@ -43,12 +43,12 @@
                   Grid.RowSpan="3"
                   Margin="10"
                   DisplayMemberPath="Title" 
-                  ItemsSource="{Binding MenuItems}"/>
+                  ItemsSource="{Binding MenuItems, UpdateSourceTrigger=PropertyChanged}"/>
         <ListView Grid.Column="2" Grid.Row="3" 
                   Grid.RowSpan="2" 
                   Margin="10"
                   DisplayMemberPath="Title"
-                  ItemsSource="{Binding CurrentlySelectedMenuItems}"/>
+                  ItemsSource="{Binding CurrentlySelectedMenuItems, UpdateSourceTrigger=PropertyChanged}"/>
 
     </Grid>
 </Page>
