@@ -12,5 +12,6 @@
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="32" />
         </Style>
+        <x:String x:Key="RightClickMessage">Thank you for checking out my UWP demo application</x:String>
     </Application.Resources>
 </Application>
