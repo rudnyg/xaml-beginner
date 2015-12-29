@@ -29,7 +29,7 @@ namespace RestaurantManager.Behavoirs
             }
         }
 
-        private void Page_RightTapped(object sender, RightTappedRoutedEventArgs e)
+        private  void Page_RightTapped(object sender, RightTappedRoutedEventArgs e)
         {
             new MessageDialog(Message).ShowAsync();
         }

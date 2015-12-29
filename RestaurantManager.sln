@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantManager.UniversalWindows", "RestaurantManager\RestaurantManager.UniversalWindows.csproj", "{24DC6370-1802-4B0C-8508-C5424D2326D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantManager.Models", "RestaurantManager.Models\RestaurantManager.Models.csproj", "{FA4505C7-5A34-4CE6-B5DE-FDB58A61F494}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantManager.Core", "RestaurantManager.Core\RestaurantManager.Core.csproj", "{FA4505C7-5A34-4CE6-B5DE-FDB58A61F494}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

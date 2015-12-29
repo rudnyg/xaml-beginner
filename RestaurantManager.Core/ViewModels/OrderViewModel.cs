@@ -1,11 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using RestaurantManager.Core.Models;
 
-namespace RestaurantManager.Models
+namespace RestaurantManager.Core.ViewModels
 {
-    public class OrderDataManager : DataManager
+    public class OrderViewModel : ViewModel
     {
         private List<MenuItem> _menuItems;
-        private List<MenuItem> _currentlySelectedMenuItems;
+
+        private ObservableCollection<MenuItem> _currentlySelectedMenuItems;
+
+      
 
         public List<MenuItem> MenuItems
         {
@@ -13,31 +20,33 @@ namespace RestaurantManager.Models
             set
             {
                 _menuItems = value;
-                this.OnPropertyChanged(nameof(MenuItems));
+                OnPropertyChanged(nameof(MenuItems));
             }
         }
 
-        public List<MenuItem> CurrentlySelectedMenuItems
+        public ObservableCollection<MenuItem> CurrentlySelectedMenuItems
         {
             get { return _currentlySelectedMenuItems; }
             set {          
                     _currentlySelectedMenuItems = value;
-                    this.OnPropertyChanged(nameof(CurrentlySelectedMenuItems));
+                    OnPropertyChanged(nameof(CurrentlySelectedMenuItems));
             }
         }
-
 
         protected override void OnDataLoaded()
         {
             _menuItems = Repository.StandardMenuItems;
 
-            CurrentlySelectedMenuItems = new List<MenuItem>
+            CurrentlySelectedMenuItems = new ObservableCollection<MenuItem>
             {
                 //simulate selecting multiple items 
                 _menuItems[3],
                 _menuItems[5]
             };
-            
+
+
+                 
         }
+
     }
 }

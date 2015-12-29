@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using RestaurantManager.Core.Models;
 
-namespace RestaurantManager.Models
+namespace RestaurantManager.Core
 {
     public sealed class RestaurantContext
     {
         public List<Table> Tables { get; private set; }
         public List<MenuItem> StandardMenuItems { get; private set; }
-        public List<Order> Orders { get; private set; }
+        public ObservableCollection<Order> Orders { get; private set; }
 
         public async Task InitializeContextAsync()
         {
@@ -37,7 +38,7 @@ namespace RestaurantManager.Models
                 new MenuItem { Title = "Mashed Peas", Price = 3.25m }
             };
 
-            Orders = new List<Order>
+            Orders = new ObservableCollection<Order>
             {
                 new Order { Complete = false, Expedite = true, SpecialRequests = "Allergic to Shellfish", Table = Tables.Last(), Items = new List<MenuItem> { StandardMenuItems.First() } },
                 new Order { Complete = false, Expedite = false, SpecialRequests = string.Empty, Table = Tables.Last(), Items = new List<MenuItem> { StandardMenuItems.Last(), StandardMenuItems.First() } },
