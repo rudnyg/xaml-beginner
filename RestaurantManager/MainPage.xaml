@@ -11,9 +11,29 @@
         <ControlTemplate x:Key="RoundButton">
             <Border CornerRadius="25"  Background="{TemplateBinding Background}" Padding="10">
                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"
-                                  Foreground="{TemplateBinding Foreground}"></ContentPresenter>
+                                  Foreground="{TemplateBinding Foreground}"/>
             </Border>
         </ControlTemplate>
+        <Storyboard x:Name="SlidingButton" >
+            <DoubleAnimation Storyboard.TargetName="OrderViewButton"
+                             Storyboard.TargetProperty="(Button.RenderTransform).(TranslateTransform.X)"
+                             From="-200"
+                             To="0"
+                             Duration="0:0:1.5">
+                <DoubleAnimation.EasingFunction>
+                    <ElasticEase EasingMode="EaseOut" Springiness="5" Oscillations="2" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="SubmitOrderButton"
+                             Storyboard.TargetProperty="(Button.RenderTransform).(TranslateTransform.X)"
+                             From="200"
+                             To="0"
+                             Duration="0:0:1.5">
+                <DoubleAnimation.EasingFunction>
+                    <ElasticEase EasingMode="EaseOut" Springiness="5" Oscillations="2" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
     </Page.Resources>
     <i:Interaction.Behaviors>
         <bh:RightClickMessageDialogBehavoir Message="{StaticResource RightClickMessage}"/>
@@ -31,11 +51,19 @@
         <TextBlock Grid.Row="0" Style="{StaticResource HeaderTextBlockStyle}" 
                    Grid.ColumnSpan="2" Text="Restaurant Manager" 
                    VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-        <Button Grid.Row="2"  Template="{StaticResource RoundButton}" x:Name="OrderViewButton" 
+        <Button x:Name="OrderViewButton" Grid.Row="2"  Template="{StaticResource RoundButton}"  
                 Click="OrderViewButton_OnClick" Grid.Column="0" Content="Go to Orders View"  
-                VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Button Grid.Row="2" Template="{StaticResource RoundButton}" x:Name="SumbitOrderButton" 
+                VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button.RenderTransform>
+                <TranslateTransform X="0" Y="0"/>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="SubmitOrderButton" Grid.Row="2" Template="{StaticResource RoundButton}"  
                 Click="SumbitOrderButton_OnClick" Grid.Column="1" Content="Submit Order"  
-                VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button.RenderTransform>
+                <TranslateTransform X="0" Y="0"/>
+            </Button.RenderTransform>
+        </Button>
     </Grid>
 </Page>

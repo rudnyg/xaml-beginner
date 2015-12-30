@@ -27,6 +27,8 @@ namespace RestaurantManager
         public MainPage()
         {
             this.InitializeComponent();
+
+            SlidingButton.Begin();
         }
 
    

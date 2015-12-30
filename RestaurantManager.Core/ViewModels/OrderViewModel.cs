@@ -8,7 +8,7 @@ namespace RestaurantManager.Core.ViewModels
 {
     public class OrderViewModel : ViewModel
     {
-        private List<MenuItem> _menuItems;
+        private ObservableCollection<MenuItem> _menuItems;
 
         private ObservableCollection<MenuItem> _currentlySelectedMenuItems;
 
@@ -16,7 +16,7 @@ namespace RestaurantManager.Core.ViewModels
 
         public DelegateCommand<string> SubmitOrderCommand { get; private set; }
          
-        public List<MenuItem> MenuItems
+        public ObservableCollection<MenuItem> MenuItems
         {
             get { return _menuItems; }
             set
@@ -45,7 +45,7 @@ namespace RestaurantManager.Core.ViewModels
 
         protected override void OnDataLoaded()
         {
-            _menuItems = Repository.StandardMenuItems;
+            MenuItems = new ObservableCollection<MenuItem>(Repository.StandardMenuItems);
 
             CurrentlySelectedMenuItems = new ObservableCollection<MenuItem>();
             AddMenuItemCommand = new DelegateCommand<MenuItem>(OnAddMenItem);

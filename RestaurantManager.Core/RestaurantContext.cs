@@ -16,7 +16,7 @@ namespace RestaurantManager.Core
         public async Task InitializeContextAsync()
         {
             //simulates a network delay
-            await Task.Delay(TimeSpan.FromSeconds(0d));
+            await Task.Delay(TimeSpan.FromSeconds(2.5d));
 
             Tables = new List<Table>
             {

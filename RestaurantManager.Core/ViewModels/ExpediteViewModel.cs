@@ -6,6 +6,7 @@ namespace RestaurantManager.Core.ViewModels
 {
     public class ExpediteViewModel : ViewModel
     {
+        
         public DelegateCommand<Order> DeleteOrderCommand { get;  private set; }
         public DelegateCommand<Order> DeleteAllOrdersCommand { get; private set; }
 
@@ -13,17 +14,17 @@ namespace RestaurantManager.Core.ViewModels
         {
             DeleteOrderCommand = new DelegateCommand<Order>(OnDeleteOrder);
             DeleteAllOrdersCommand = new DelegateCommand<Order>(OnDeleteAllOrders);
+            OrderItems = Repository.Orders;
         }
 
-      
-
+        private ObservableCollection<Order> _orderItems; 
         public ObservableCollection<Order> OrderItems
         {
-            get { return Repository.Orders; }
+            get { return _orderItems; }
             set
             {
-                  OrderItems = value;
-                    this.OnPropertyChanged(nameof(OrderItems));
+                _orderItems = value;
+                OnPropertyChanged(nameof(OrderItems));
             }
         }
 
