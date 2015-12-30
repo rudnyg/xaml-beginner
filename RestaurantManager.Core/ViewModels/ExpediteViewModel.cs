@@ -6,8 +6,8 @@ namespace RestaurantManager.Core.ViewModels
 {
     public class ExpediteViewModel : ViewModel
     {
-        public DelegateCommand<Order> DeleteOrderCommand { get; set; }
-        public DelegateCommand<Order> DeleteAllOrdersCommand { get; set; }
+        public DelegateCommand<Order> DeleteOrderCommand { get;  private set; }
+        public DelegateCommand<Order> DeleteAllOrdersCommand { get; private set; }
 
         protected override void OnDataLoaded()
         {

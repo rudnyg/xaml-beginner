@@ -8,14 +8,14 @@ namespace RestaurantManager.Core.ViewModels
     {
         public RestaurantContext Repository { get; private set; }
 
-        public ViewModel()
+        protected ViewModel()
         {
             LoadData();
         }
 
         private async  void LoadData()
         {
-           this.Repository = await RestaurantContextFactory.GetRestaurantContext();
+           Repository = await RestaurantContextFactory.GetRestaurantContext();
             OnDataLoaded();
         }
 

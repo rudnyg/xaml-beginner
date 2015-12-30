@@ -34,20 +34,23 @@
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Special Request:"   HorizontalAlignment="Left"/>
         <TextBlock Grid.Row="2" Grid.Column="2" Text="Order Items:"   HorizontalAlignment="Left"/>
-        <TextBox Grid.Row="3" Grid.Column="1" TextWrapping="Wrap"/>
-        <Button Grid.Row="5" Grid.Column="0" Content="Add to Order"   HorizontalAlignment="Center"  />
-        <Button Grid.Row="5" Grid.Column="1" Content="Submit Order"  HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
-        <ListView Grid.Row="2" 
+        <TextBox  Text="{Binding OrderSpecialRequest, Mode=TwoWay}" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap"/>
+        <ListView x:Name="MenuItemsList" Grid.Row="2" 
                   Grid.Column="0"
                   Grid.RowSpan="3"
                   Margin="10"
                   DisplayMemberPath="Title" 
                   ItemsSource="{Binding MenuItems, UpdateSourceTrigger=PropertyChanged}"/>
-        <ListView Grid.Column="2" Grid.Row="3" 
+        <ListView  Grid.Column="2" Grid.Row="3" 
                   Grid.RowSpan="2" 
                   Margin="10"
                   DisplayMemberPath="Title"
                   ItemsSource="{Binding CurrentlySelectedMenuItems, UpdateSourceTrigger=PropertyChanged}"/>
-
+        <Button  Content="Add to Order" Grid.Row="5" Grid.Column="0"
+                 HorizontalAlignment="Center" 
+                Command="{Binding AddMenuItemCommand}" CommandParameter="{Binding ElementName=MenuItemsList, Path=SelectedItem}" />
+        <Button Content="Submit Order" Grid.Row="5" Grid.Column="1" 
+                Grid.ColumnSpan="2" HorizontalAlignment="Center"
+                Command="{Binding SubmitOrderCommand}" />
     </Grid>
 </Page>
